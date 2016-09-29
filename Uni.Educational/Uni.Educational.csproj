@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C64FAD05-B9CA-4E88-A1B3-B5651B343718}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Uni.Educational</RootNamespace>
+    <AssemblyName>Uni.Educational</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v14.1.Core, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v14.1, Version=14.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip, Version=1.9.1.8, Culture=neutral, PublicKeyToken=edbe51ad942a3f5c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configuration\ConfigurationSet.cs" />
+    <Compile Include="File\NtfsUtils.cs" />
+    <Compile Include="Interop\Win32.cs" />
+    <Compile Include="IoC\Activation\ApplicationContextFactory.cs" />
+    <Compile Include="IoC\Services\IObjectManager.cs" />
+    <Compile Include="IoC\Activation\ObjectHelpers.cs" />
+    <Compile Include="IoC\Attribute\RegisterServiceProvider.cs" />
+    <Compile Include="IoC\Reflection\AssemblyScanner.cs" />
+    <Compile Include="IoC\Services\ILogger.cs" />
+    <Compile Include="IoC\Activation\ObjectActivator.cs" />
+    <Compile Include="IoC\Activation\ObjectManager.cs" />
+    <Compile Include="IoC\Activation\ObjectNotFoundException.cs" />
+    <Compile Include="IoC\Activation\ObjectType.cs" />
+    <Compile Include="IoC\ApplicationContext.cs" />
+    <Compile Include="IoC\Attribute\RegisterObject.cs" />
+    <Compile Include="IoC\Attribute\RegisterView.cs" />
+    <Compile Include="IoC\IService.cs" />
+    <Compile Include="IoC\ServiceLocator.cs" />
+    <Compile Include="IoC\Services\IObjectActivator.cs" />
+    <Compile Include="IoC\Services\ISecurityProvider.cs" />
+    <Compile Include="IoC\Services\IViewActivator.cs" />
+    <Compile Include="IoC\Services\IViewBase.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="Migrations\201609072320526_ForeignKeyes.cs" />
+    <Compile Include="Migrations\201609072320526_ForeignKeyes.Designer.cs">
+      <DependentUpon>201609072320526_ForeignKeyes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Model\Field.cs" />
+    <Compile Include="Model\Professor.cs" />
+    <Compile Include="Model\ProgrammingLanguage.cs" />
+    <Compile Include="Model\Project.cs" />
+    <Compile Include="Model\SchemaContext.cs" />
+    <Compile Include="Model\Student.cs" />
+    <Compile Include="Model\TechnologyStack.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Security\AuthenticationProvider.cs" />
+    <Compile Include="Security\OperationPermission.cs" />
+    <Compile Include="Security\UserPrincipal.cs" />
+    <Compile Include="View\Base\frmEntityBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmEntityBase.Designer.cs">
+      <DependentUpon>frmEntityBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\frmListBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\Base\frmListBase.Designer.cs">
+      <DependentUpon>frmListBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\Base\ViewActivator.cs" />
+    <Compile Include="View\Base\WindowManager.cs" />
+    <Compile Include="View\frmDbConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmDbConfig.Designer.cs">
+      <DependentUpon>frmDbConfig.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmFields.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmFields.Designer.cs">
+      <DependentUpon>frmFields.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmHost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmHost.Designer.cs">
+      <DependentUpon>frmHost.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProfessor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProfessor.Designer.cs">
+      <DependentUpon>frmProfessor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProfessors.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProfessors.Designer.cs">
+      <DependentUpon>frmProfessors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProgrammingLanguage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProgrammingLanguage.Designer.cs">
+      <DependentUpon>frmProgrammingLanguage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProject.Designer.cs">
+      <DependentUpon>frmProject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmProjects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmProjects.Designer.cs">
+      <DependentUpon>frmProjects.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmStudent.Designer.cs">
+      <DependentUpon>frmStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmStudents.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmStudents.Designer.cs">
+      <DependentUpon>frmStudents.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\frmTechnologies.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\frmTechnologies.Designer.cs">
+      <DependentUpon>frmTechnologies.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Migrations\201609072320526_ForeignKeyes.resx">
+      <DependentUpon>201609072320526_ForeignKeyes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="View\Base\frmEntityBase.resx">
+      <DependentUpon>frmEntityBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\Base\frmListBase.resx">
+      <DependentUpon>frmListBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmDbConfig.resx">
+      <DependentUpon>frmDbConfig.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmFields.resx">
+      <DependentUpon>frmFields.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmHost.resx">
+      <DependentUpon>frmHost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProfessor.resx">
+      <DependentUpon>frmProfessor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProfessors.resx">
+      <DependentUpon>frmProfessors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProgrammingLanguage.resx">
+      <DependentUpon>frmProgrammingLanguage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProject.resx">
+      <DependentUpon>frmProject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmProjects.resx">
+      <DependentUpon>frmProjects.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmStudent.resx">
+      <DependentUpon>frmStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmStudents.resx">
+      <DependentUpon>frmStudents.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\frmTechnologies.resx">
+      <DependentUpon>frmTechnologies.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Uni.Educational.Configuration.ConfigurationSet.datasource" />
+    <None Include="Properties\DataSources\Uni.Educational.Model.Field.datasource" />
+    <None Include="Properties\DataSources\Uni.Educational.Model.Professor.datasource" />
+    <None Include="Properties\DataSources\Uni.Educational.Model.ProgrammingLanguage.datasource" />
+    <None Include="Properties\DataSources\Uni.Educational.Model.Project.datasource" />
+    <None Include="Properties\DataSources\Uni.Educational.Model.Student.datasource" />
+    <None Include="Properties\DataSources\Uni.Educational.Model.TechnologyStack.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
