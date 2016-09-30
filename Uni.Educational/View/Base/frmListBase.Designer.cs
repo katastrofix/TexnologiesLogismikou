@@ -64,7 +64,7 @@
             this.ribbonControlMain.Name = "ribbonControlMain";
             this.ribbonControlMain.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.rbCRUD});
-            this.ribbonControlMain.Size = new System.Drawing.Size(883, 140);
+            this.ribbonControlMain.Size = new System.Drawing.Size(883, 142);
             // 
             // bbtnAdd
             // 
@@ -125,10 +125,10 @@
             // 
             this.layoutControlMain.Controls.Add(this.gcList);
             this.layoutControlMain.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.layoutControlMain.Location = new System.Drawing.Point(0, 140);
+            this.layoutControlMain.Location = new System.Drawing.Point(0, 142);
             this.layoutControlMain.Name = "layoutControlMain";
             this.layoutControlMain.Root = this.lcgMain;
-            this.layoutControlMain.Size = new System.Drawing.Size(883, 386);
+            this.layoutControlMain.Size = new System.Drawing.Size(883, 384);
             this.layoutControlMain.TabIndex = 1;
             this.layoutControlMain.Text = "layoutControl1";
             // 
@@ -139,7 +139,7 @@
             this.gcList.MainView = this.gvList;
             this.gcList.MenuManager = this.ribbonControlMain;
             this.gcList.Name = "gcList";
-            this.gcList.Size = new System.Drawing.Size(859, 362);
+            this.gcList.Size = new System.Drawing.Size(859, 360);
             this.gcList.TabIndex = 4;
             this.gcList.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvList});
@@ -148,7 +148,6 @@
             // 
             this.gvList.GridControl = this.gcList;
             this.gvList.Name = "gvList";
-            this.gvList.OptionsBehavior.Editable = false;
             this.gvList.DoubleClick += new System.EventHandler(this.gvList_DoubleClick);
             // 
             // lcgMain
@@ -160,7 +159,7 @@
             this.layoutControlItem1});
             this.lcgMain.Location = new System.Drawing.Point(0, 0);
             this.lcgMain.Name = "lcgMain";
-            this.lcgMain.Size = new System.Drawing.Size(883, 386);
+            this.lcgMain.Size = new System.Drawing.Size(883, 384);
             this.lcgMain.Text = "lcgMain";
             this.lcgMain.TextVisible = false;
             // 
@@ -170,7 +169,7 @@
             this.layoutControlItem1.CustomizationFormText = "layoutControlItem1";
             this.layoutControlItem1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem1.Name = "layoutControlItem1";
-            this.layoutControlItem1.Size = new System.Drawing.Size(863, 366);
+            this.layoutControlItem1.Size = new System.Drawing.Size(863, 364);
             this.layoutControlItem1.Text = "layoutControlItem1";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextToControlDistance = 0;

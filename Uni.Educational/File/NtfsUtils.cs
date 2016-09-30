@@ -29,7 +29,7 @@ namespace Uni.Educational.File
                 Directory.CreateDirectory(dirPath);
             }
 
-            var archivePath = Path.Combine(dirPath, string.Concat(directoryId, Path.GetFileName(path)));
+            var archivePath = Path.Combine(dirPath, string.Concat(directoryId, "_", Path.GetFileName(path)));
 
             System.IO.File.Copy(path, archivePath);
         }

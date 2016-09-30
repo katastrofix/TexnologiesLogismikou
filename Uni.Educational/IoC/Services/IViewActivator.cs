@@ -10,5 +10,7 @@ namespace Uni.Educational.IoC.Services
     public interface IViewActivator : IService
     {
         Form CreateForm(string domain, string name, Dictionary<string, object> arguments);
+
+        bool IsModal(string domain, string name);
     }
 }

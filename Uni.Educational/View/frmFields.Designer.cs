@@ -42,7 +42,7 @@
             // gcList
             // 
             this.gcList.DataSource = this.fieldBindingSource;
-            this.gcList.Size = new System.Drawing.Size(853, 346);
+            this.gcList.Size = new System.Drawing.Size(847, 330);
             // 
             // ribbonControlMain
             // 
@@ -50,7 +50,7 @@
             this.ribbonControlMain.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
             this.bbtnSave});
             this.ribbonControlMain.MaxItemId = 7;
-            this.ribbonControlMain.Size = new System.Drawing.Size(877, 140);
+            this.ribbonControlMain.Size = new System.Drawing.Size(871, 140);
             // 
             // gvList
             // 
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(877, 510);
+            this.ClientSize = new System.Drawing.Size(871, 494);
             this.Name = "frmFields";
             this.Text = "Specialty Fields Configuration";
             ((System.ComponentModel.ISupportInitialize)(this.gcList)).EndInit();

@@ -38,5 +38,10 @@ namespace Uni.Educational.View
         {
             throw new NotImplementedException();
         }
+
+        private void btnOk_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

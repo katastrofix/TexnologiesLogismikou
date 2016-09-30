@@ -35,10 +35,8 @@ namespace Uni.Educational.View.Base
 
             var showAsModal = m_applicationContext
                .Locator
-               .GetService<IObjectManager>()
-               .GetAttributeForObjectType<RegisterView>(ObjectType.UIElement, domain, name)
-               .Modal;
-
+               .GetService<IViewActivator>()
+               .IsModal(domain, name);
 
             (frm as IViewBase).Initialize(m_applicationContext, arguments);
 
@@ -47,6 +45,9 @@ namespace Uni.Educational.View.Base
             if (showAsModal)
             {
                 frm.ShowDialog(m_owner);
+                // when you display the form as a modal loop
+                // you have to manually dispose it, because
+                // when the modal loop ends, .NET just calls Hide()
                 frm.Dispose();
             }
             else

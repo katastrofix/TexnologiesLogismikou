@@ -51,7 +51,7 @@ namespace Uni.Educational.View
             projectBindingSource.DataSource = project;
 
             Text = string.Concat("Project: ", project.Title);
-   
+
             LoadLookups();
 
             LoadFiles();

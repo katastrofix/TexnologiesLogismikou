@@ -36,16 +36,44 @@ namespace Uni.Educational.View
 
         protected override void OnRefresh()
         {
+            m_context.Professors.Load();
+            m_context.Students.Load();
+            m_context.Technologies.Load();
+            m_context.ProgrammingLanguages.Load();
             m_context.Projects.Load();
 
             projectBindingSource.DataSource = m_context.Projects.Local.ToBindingList();
+
+            studentBindingSource.DataSource = m_context
+            .Students
+            .Local
+            .ToBindingList()
+            .Select(s => new { StudentID = s, LastName = string.Concat(s.FirstName, " ", s.LastName) });
+
+            professorBindingSource.DataSource = m_context
+                .Professors
+                .Local
+                .ToBindingList()
+                .Select(p => new { ProfessorID = p, LastName = string.Concat(p.FirstName, " ", p.LastName) });
+
+            programmingLanguageBindingSource.DataSource = m_context
+                .ProgrammingLanguages
+                .Local
+                .ToBindingList()
+                .Select(lang => new { ProgrammingLanguageID = lang, Name = lang.Name });
+
+            technologyStackBindingSource.DataSource = m_context
+                .Technologies
+                .Local
+                .ToBindingList()
+                .Select(t => new { TechnologyStackID = t, Description = t.Description });
         }
 
         protected override void OnEdit()
         {
-            var professor = gvList.GetFocusedRow() as Professor;
+            var project = gvList.GetFocusedRow() as Project;
 
-            var args = new Dictionary<String, object>() { { "ID", professor.ProfessorID } };
+            var args = new Dictionary<String, object>() { { "ID", project.ProjectID } };
 
             ApplicationContext.WindowManager.ShowWindow("Projects", "ProjectEditor", args);
 

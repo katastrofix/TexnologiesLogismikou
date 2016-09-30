@@ -75,6 +75,7 @@
             this.btnOk.StyleController = this.layoutControl1;
             this.btnOk.TabIndex = 6;
             this.btnOk.Text = "Ok";
+            this.btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // tePassword
             // 

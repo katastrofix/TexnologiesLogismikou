@@ -24,6 +24,15 @@ namespace Uni.Educational.View.Base
             return form as Form;
         }
 
+        public bool IsModal(string domain, string name)
+        {
+            return ApplicationContext
+            .Locator
+            .GetService<IObjectManager>()
+            .GetAttributeForObjectType<RegisterView>(ObjectType.UIElement, domain, name)
+            .Modal;
+        }
+
         public IoC.ApplicationContext ApplicationContext { get; set; }
 
 

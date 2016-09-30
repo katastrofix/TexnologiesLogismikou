@@ -83,22 +83,29 @@ namespace Uni.Educational.View
 
         private void LoadConfig()
         {
-            var auth = int.Parse(ConfigurationManager.AppSettings["Authentication"]);
-            if (auth == SSPI)
+            try
             {
-                cbAuthentication.SelectedIndex = 1;
-                teUser.Properties.ReadOnly = true;
-                tePassword.Properties.ReadOnly = true;
+                var auth = int.Parse(ConfigurationManager.AppSettings["Authentication"]);
+                if (auth == SSPI)
+                {
+                    cbAuthentication.SelectedIndex = 1;
+                    teUser.Properties.ReadOnly = true;
+                    tePassword.Properties.ReadOnly = true;
+                }
+                else if (auth == SQL_CREDENTIALS)
+                {
+                    cbAuthentication.SelectedIndex = 0;
+                    var configuration = new ConfigurationSet();
+                    var tokens = ConfigurationManager.AppSettings["EFConnectionStringRemote"].Split(';');
+                    configuration.Server = tokens[0].Split('=').Last().Trim();
+                    configuration.User = tokens[1].Split('=').Last().Trim();
+                    configuration.Password = tokens[2].Split('=').Last().Trim();
+                    configurationSetBindingSource.DataSource = configuration;
+                }
             }
-            else if (auth == SQL_CREDENTIALS)
+            catch
             {
-                cbAuthentication.SelectedIndex = 0;
-                var configuration = new ConfigurationSet();
-                var tokens = ConfigurationManager.AppSettings["EFConnectionStringRemote"].Split(';');
-                configuration.Server = tokens[0].Split('=').Last().Trim();
-                configuration.User = tokens[1].Split('=').Last().Trim();
-                configuration.Password = tokens[2].Split('=').Last().Trim();
-                configurationSetBindingSource.DataSource = configuration;
+                XtraMessageBox.Show("Failed to retreive configuration.");
             }
         }
 
